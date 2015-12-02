@@ -7,6 +7,7 @@
 namespace axy\random;
 
 use axy\random\helpers\Alg;
+use axy\binary\Binary;
 
 /**
  * Generation of random sequences
@@ -22,5 +23,16 @@ class Random
     public static function createString($length)
     {
         return Alg::random($length);
+    }
+
+    /**
+     * Returns an array of bytes
+     *
+     * @param int $count
+     * @return int[]
+     */
+    public static function createBytes($count)
+    {
+        return Binary::unpackBytes(self::createString($count));
     }
 }

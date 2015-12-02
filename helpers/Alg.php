@@ -67,7 +67,7 @@ class Alg
         $result = [];
         do {
             $buffer = fread($fp, $left);
-            $lBuffer = strlen($buffer);
+            $lBuffer = Binary::getLength($buffer);
             if ($lBuffer === 0) {
                 return null;
             }

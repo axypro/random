@@ -1,0 +1,28 @@
+{
+    "name": "axy/random",
+    "type": "library",
+    "description": "Generates pseudo-random",
+    "keywords": [
+        "random"
+    ],
+    "homepage": "https://github.com/axypro/random",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Oleg Grigoriev",
+            "email": "go.vasac@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "axy/binary": "~0.1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "axy\\random\\": ""
+        }
+    },
+    "archive": {
+        "exclude": ["/tests/*", "/doc/*", "/cs.sh", "/phpmd.sh", "/*.xml.dist", "/CHANGELOG.md"]
+    }
+}

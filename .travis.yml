@@ -19,13 +19,10 @@ install:
   - composer install
   - if [ "$CHECKS" = "yes" ]; then composer require satooshi/php-coveralls=dev-master --dev; fi;
   - if [ "$CHECKS" = "yes" ]; then composer require squizlabs/php_codesniffer="~2.3" --dev; fi;
-  - if [ "$CHECKS" = "yes" ]; then composer require phpunit/phpunit=dev-master --dev; fi;
 
 script:
   - if [ "$CHECKS" = "yes" ]; then mkdir -p build/logs; fi;
-  - phpunit --version
-  - if [ "$CHECKS" = "yes" ]; then vendor/bin/phpunit --version; fi;
-  - if [ "$CHECKS" = "yes" ]; then vendor/bin/phpunit --coverage-clover build/logs/clover.xml; else phpunit; fi;
+  - if [ "$CHECKS" = "yes" ]; then phpunit --coverage-clover build/logs/clover.xml; else phpunit; fi;
   - if [ "$CHECKS" = "yes" ]; then php vendor/bin/phpcs --standard=PSR2 --encoding=utf-8 --ignore=vendor .; fi;
 
 after_success:

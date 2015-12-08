@@ -27,6 +27,7 @@ script:
 
 after_success:
   - if [ "$CHECKS" = "yes" ]; then php vendor/bin/coveralls -c .coveralls.yml; fi;
+  - if [ "$CHECKS" = "yes" ]; then ls -la build/logs; fi;
 
 notifications:
   email:

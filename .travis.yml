@@ -3,11 +3,10 @@ language: php
 matrix:
   include:
     - php: 5.4
-      env: CHECKS=yes        
+      env: CHECKS=yes
     - php: 5.5
     - php: 5.6
     - php: 7.0
-      env: CHECKS=yes    
     - php: hhvm
 
 sudo: false
@@ -17,7 +16,7 @@ before_install:
 
 install:
   - composer install
-  - if [ "$CHECKS" = "yes" ]; then composer require satooshi/php-coveralls=* --dev; fi;
+  - if [ "$CHECKS" = "yes" ]; then composer require satooshi/php-coveralls=dev-master --dev; fi;
   - if [ "$CHECKS" = "yes" ]; then composer require squizlabs/php_codesniffer="~2.3" --dev; fi;
 
 script:
@@ -27,7 +26,6 @@ script:
 
 after_success:
   - if [ "$CHECKS" = "yes" ]; then php vendor/bin/coveralls -c .coveralls.yml; fi;
-  - if [ "$CHECKS" = "yes" ]; then ls -la build/logs; fi;
 
 notifications:
   email:

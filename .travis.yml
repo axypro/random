@@ -23,7 +23,7 @@ install:
 
 script:
   - if [ "$CHECKS" = "yes" ]; then mkdir -p build/logs; fi;
-  - phpinit --version
+  - phpunit --version
   - if [ "$CHECKS" = "yes" ]; then vendor/bin/phpunit --version; fi;
   - if [ "$CHECKS" = "yes" ]; then vendor/bin/phpunit --coverage-clover build/logs/clover.xml; else phpunit; fi;
   - if [ "$CHECKS" = "yes" ]; then php vendor/bin/phpcs --standard=PSR2 --encoding=utf-8 --ignore=vendor .; fi;

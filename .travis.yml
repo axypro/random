@@ -17,7 +17,7 @@ before_install:
 
 install:
   - composer install
-  - if [ "$CHECKS" = "yes" ]; then composer require satooshi/php-coveralls=dev-master --dev; fi;
+  - if [ "$CHECKS" = "yes" ]; then composer require satooshi/php-coveralls=* --dev; fi;
   - if [ "$CHECKS" = "yes" ]; then composer require squizlabs/php_codesniffer="~2.3" --dev; fi;
 
 script:

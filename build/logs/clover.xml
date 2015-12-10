@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1449572379">
+  <project timestamp="1449572379">
+    <package name="axy\random">
+      <file name="/home/go/github/axypro/random/Random.php">
+        <class name="Random" namespace="axy\random">
+          <metrics methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
+        </class>
+        <line num="23" type="method" name="createString" crap="1" count="2"/>
+        <line num="25" type="stmt" count="2"/>
+        <line num="34" type="method" name="createBytes" crap="1" count="1"/>
+        <line num="36" type="stmt" count="1"/>
+        <metrics loc="38" ncloc="19" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
+      </file>
+    </package>
+    <package name="axy\random\helpers">
+      <file name="/home/go/github/axypro/random/helpers/Alg.php">
+        <class name="Alg" namespace="axy\random\helpers">
+          <metrics methods="6" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="42" coveredstatements="34" elements="48" coveredelements="35"/>
+        </class>
+        <line num="20" type="method" name="randomBytes" crap="2.15" count="2"/>
+        <line num="22" type="stmt" count="2"/>
+        <line num="23" type="stmt" count="2"/>
+        <line num="25" type="stmt" count="0"/>
+        <line num="32" type="method" name="mcrypt" crap="2.15" count="5"/>
+        <line num="34" type="stmt" count="5"/>
+        <line num="35" type="stmt" count="0"/>
+        <line num="37" type="stmt" count="5"/>
+        <line num="44" type="method" name="openssl" crap="3.33" count="1"/>
+        <line num="46" type="stmt" count="1"/>
+        <line num="47" type="stmt" count="0"/>
+        <line num="49" type="stmt" count="1"/>
+        <line num="50" type="stmt" count="1"/>
+        <line num="51" type="stmt" count="0"/>
+        <line num="53" type="stmt" count="1"/>
+        <line num="60" type="method" name="dev" crap="4.13" count="1"/>
+        <line num="62" type="stmt" count="1"/>
+        <line num="63" type="stmt" count="0"/>
+        <line num="65" type="stmt" count="1"/>
+        <line num="66" type="stmt" count="1"/>
+        <line num="67" type="stmt" count="1"/>
+        <line num="69" type="stmt" count="1"/>
+        <line num="70" type="stmt" count="1"/>
+        <line num="71" type="stmt" count="1"/>
+        <line num="72" type="stmt" count="0"/>
+        <line num="73" type="stmt" count="0"/>
+        <line num="75" type="stmt" count="1"/>
+        <line num="76" type="stmt" count="1"/>
+        <line num="77" type="stmt" count="1"/>
+        <line num="78" type="stmt" count="1"/>
+        <line num="79" type="stmt" count="1"/>
+        <line num="86" type="method" name="manually" crap="2" count="1"/>
+        <line num="88" type="stmt" count="1"/>
+        <line num="89" type="stmt" count="1"/>
+        <line num="90" type="stmt" count="1"/>
+        <line num="91" type="stmt" count="1"/>
+        <line num="92" type="stmt" count="1"/>
+        <line num="99" type="method" name="random" crap="4.02" count="4"/>
+        <line num="101" type="stmt" count="4"/>
+        <line num="102" type="stmt" count="3"/>
+        <line num="104" type="stmt" count="1"/>
+        <line num="105" type="stmt" count="1"/>
+        <line num="106" type="stmt" count="1"/>
+        <line num="107" type="stmt" count="1"/>
+        <line num="108" type="stmt" count="1"/>
+        <line num="109" type="stmt" count="1"/>
+        <line num="111" type="stmt" count="1"/>
+        <line num="112" type="stmt" count="0"/>
+        <metrics loc="124" ncloc="87" classes="1" methods="6" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="42" coveredstatements="34" elements="48" coveredelements="35"/>
+      </file>
+    </package>
+    <metrics files="2" loc="162" ncloc="106" classes="2" methods="8" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="44" coveredstatements="36" elements="52" coveredelements="39"/>
+  </project>
+</coverage>

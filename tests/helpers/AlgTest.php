@@ -38,9 +38,16 @@ class AlgTest extends \PHPUnit_Framework_TestCase
      */
     public function providerRandom()
     {
+        $mcrypt = function_exists('mcrypt_create_iv');
+        if ($mcrypt) {
+            $ref = new \ReflectionFunction('mcrypt_create_iv');
+            if ($ref->isDeprecated()) {
+                $mcrypt = false;
+            }
+        }
         return [
             ['randomBytes', function_exists('random_bytes')],
-            ['mcrypt', function_exists('mcrypt_create_iv')],
+            ['mcrypt', $mcrypt],
             ['openssl', function_exists('openssl_random_pseudo_bytes')],
             ['dev', is_readable('/dev/urandom')],
             ['manually', true],

@@ -31,10 +31,19 @@ class Alg
      */
     public static function mcrypt($length)
     {
-        if (!function_exists('mcrypt_create_iv')) {
+        $fn = 'mcrypt_create_iv';
+        if (!function_exists($fn)) {
             return null;
         }
-        return mcrypt_create_iv($length, MCRYPT_DEV_URANDOM);
+        static $isDeprecated;
+        if ($isDeprecated === null) {
+            $ref = new \ReflectionFunction($fn);
+            $isDeprecated = $ref->isDeprecated();
+        }
+        if ($isDeprecated) {
+            return null;
+        }
+        return call_user_func($fn, $length, MCRYPT_DEV_URANDOM);
     }
 
     /**

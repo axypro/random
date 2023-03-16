@@ -1,5 +1,9 @@
 ### dev-master
 
+* PHP 8.1+
+* Uses random_bytes
+* Uses docker for dev
+
 ### 0.1.1 (13.01.2017)
 
 * Checks if mcrypt is deprecated

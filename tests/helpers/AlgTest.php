@@ -1,15 +1,13 @@
 <?php
-/**
- * @package axy\random
- * @author Oleg Grigoriev <go.vasac@gmail.com>
- */
 
 namespace axy\random\tests\helpers;
+
+use axy\random\tests\BaseTestCase;
 
 /**
  * coversDefaultClass \axy\random\helpers\Alg
  */
-class AlgTest extends \PHPUnit_Framework_TestCase
+class AlgTest extends BaseTestCase
 {
     /**
      * covers ::randomBytes
@@ -18,14 +16,12 @@ class AlgTest extends \PHPUnit_Framework_TestCase
      * covers ::dev
      * covers ::manual
      * @dataProvider providerRandom
-     * @param string $method
-     * @param string $func
      */
-    public function testRandom($method, $func)
+    public function testRandom(string $method, bool $func): void
     {
-        $actual = call_user_func(['axy\random\helpers\Alg', $method], 100);
+        $actual = call_user_func(['axy\random\src\helpers\Alg', $method], 100);
         if ($func) {
-            $this->assertInternalType('string', $actual);
+            $this->assertIsString($actual);
             $this->assertSame(100, strlen($actual));
             $this->assertTrue($this->checkRandom($actual), 'check random');
         } else {
@@ -33,34 +29,14 @@ class AlgTest extends \PHPUnit_Framework_TestCase
         }
     }
 
-    /**
-     * @return array
-     */
-    public function providerRandom()
+    public static function providerRandom(): array
     {
-        $mcrypt = function_exists('mcrypt_create_iv');
-        if ($mcrypt) {
-            $ref = new \ReflectionFunction('mcrypt_create_iv');
-            if ($ref->isDeprecated()) {
-                $mcrypt = false;
-            }
-        }
         return [
-            ['randomBytes', function_exists('random_bytes')],
-            ['mcrypt', $mcrypt],
-            ['openssl', function_exists('openssl_random_pseudo_bytes')],
-            ['dev', is_readable('/dev/urandom')],
-            ['manually', true],
-            ['random', true],
-            ['random', true],
+            ['randomBytes', true],
         ];
     }
 
-    /**
-     * @param string $string
-     * @return bool
-     */
-    private function checkRandom($string)
+    private function checkRandom(string $string): bool
     {
         $codes = [];
         $len = strlen($string);

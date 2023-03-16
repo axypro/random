@@ -1,35 +1,31 @@
 <?php
-/**
- * @package axy\random
- * @author Oleg Grigoriev <go.vasac@gmail.com>
- */
 
 namespace axy\random\tests;
 
-use axy\random\Random;
+use axy\random\src\Random;
 
 /**
  * coversDefaultClass axy\random\Random
  */
-class RandomTest extends \PHPUnit_Framework_TestCase
+class RandomTest extends BaseTestCase
 {
     /**
      * covers ::createString
      */
-    public function testCreateString()
+    public function testCreateString(): void
     {
         $string = Random::createString(10);
-        $this->assertInternalType('string', $string);
+        $this->assertIsString('string', $string);
         $this->assertSame(10, strlen($string));
     }
 
     /**
      * covers ::createBytes
      */
-    public function testCreateBytes()
+    public function testCreateBytes(): void
     {
         $bytes = Random::createBytes(10000);
-        $this->assertInternalType('array', $bytes);
+        $this->assertIsArray($bytes);
         $this->assertCount(10000, $bytes);
         $a = array_fill(0, 16, 0);
         $b = array_fill(0, 16, 0);
@@ -46,7 +42,7 @@ class RandomTest extends \PHPUnit_Framework_TestCase
         $this->checkResult([$a, $b]);
     }
 
-    private function checkResult($list)
+    private function checkResult($list): void
     {
         $min = null;
         $max = 0;

@@ -12,8 +12,4 @@
 
 namespace axy\random;
 
-if (!is_file(__DIR__.'/vendor/autoload.php')) {
-    throw new \LogicException('Please: composer install');
-}
-
 require_once(__DIR__.'/vendor/autoload.php');

@@ -1,8 +1,8 @@
-### dev-master
+### 0.2.1 (16.03.2023)
 
 * Fix namespaces
 
-### 0.2.0 (16.03.2023)
+### 0.2.0 (16.03.2023), broken
 
 * PHP 8.1+
 * Uses random_bytes

@@ -1,6 +1,6 @@
 <?php
 
-namespace axy\random\src\helpers;
+namespace axy\random\helpers;
 
 use axy\binary\Binary;
 

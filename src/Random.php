@@ -1,9 +1,9 @@
 <?php
 
-namespace axy\random\src;
+namespace axy\random;
 
 use axy\binary\Binary;
-use axy\random\src\helpers\Alg;
+use axy\random\helpers\Alg;
 
 /** Random sequence generator */
 class Random

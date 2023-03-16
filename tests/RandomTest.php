@@ -2,7 +2,7 @@
 
 namespace axy\random\tests;
 
-use axy\random\src\Random;
+use axy\random\Random;
 
 /**
  * coversDefaultClass axy\random\Random

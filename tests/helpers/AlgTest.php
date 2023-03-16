@@ -19,7 +19,7 @@ class AlgTest extends BaseTestCase
      */
     public function testRandom(string $method, bool $func): void
     {
-        $actual = call_user_func(['axy\random\src\helpers\Alg', $method], 100);
+        $actual = call_user_func(['axy\random\helpers\Alg', $method], 100);
         if ($func) {
             $this->assertIsString($actual);
             $this->assertSame(100, strlen($actual));

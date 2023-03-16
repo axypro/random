@@ -23,12 +23,12 @@
     },
     "autoload": {
         "psr-4": {
-            "axy\\random\\": ""
+            "axy\\random\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "axy\\random\\tests\\": ""
+            "axy\\random\\tests\\": "tests"
         }
     },
     "archive": {
